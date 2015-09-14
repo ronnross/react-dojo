@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import './app.less';
+import Starships from './Starships';
 
 class App extends React.Component {
   constructor(){
@@ -20,9 +21,9 @@ class App extends React.Component {
   render(){
     return (
       <div className="container">
-        <main>
-          {this.state.products}
-        </main>
+        <div>
+          <Starships ships={this.state.products} />
+        </div>
       </div>
     );
   }
