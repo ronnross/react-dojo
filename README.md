@@ -1,22 +1,15 @@
-# angular-mirror
-mirroring angular project with react
+# React Dojo
+Project to work on during dojo
 
-first run
+first grab all the dependancies
 ```
 npm install
 ```
 
-to get all dependancies
-
-To build the the app run
-```
-npm run build
-```
-
-To start the dev server run
+then start the dev server
 ```
 npm start
 ```
 
-Then open a browser and head to
+finally you can open a browser and head to
 [localhost:8080](localhost:8080)
