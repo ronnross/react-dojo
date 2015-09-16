@@ -2,10 +2,10 @@ import React from 'react';
 import ShipDetails from './ShipDetails';
 
 class Starship extends React.Component {
-  constructor(){
+  constructor() {
     super();
     this.state = {
-      showDetails: false
+      showDetails: false,
     };
   }
 
@@ -21,9 +21,7 @@ class Starship extends React.Component {
 
   showDetails() {
     this.setState({showDetails: !this.state.showDetails});
-    console.log("showDetails: " + this.state.showDetails);
   }
-
 }
 
 export default Starship;

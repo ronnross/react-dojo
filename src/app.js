@@ -5,19 +5,20 @@ import Starships from './Starships';
 import Cart from './Cart';
 
 class App extends React.Component {
-  constructor(){
+  constructor() {
     super();
     this.state = {
       products: [],
-      cart: []
+      cart: [],
     };
   }
-  componentDidMount(){
+
+  componentDidMount() {
     axios.get('http://swapi.co/api/starships')
-    .then(res => {
-      console.log(res.data);
-      this.setState({products: res.data.results});
-    });
+      .then(res => {
+        console.log(res.data);
+        this.setState({products: res.data.results});
+      });
   }
   addToCart(item) {
     let cartItems = this.state.cart;
@@ -36,4 +37,4 @@ class App extends React.Component {
   }
 }
 
-React.render(<App />, document.getElementById("main"));
+React.render(<App />, document.getElementById('main'));
