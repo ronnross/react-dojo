@@ -4,30 +4,32 @@ import './app.less';
 import Starships from './Starships';
 
 class App extends React.Component {
-  constructor(){
+  constructor() {
     super();
     this.state = {
       products: [],
-      cart: []
+      cart: [],
     };
   }
-  componentDidMount(){
+
+  componentDidMount() {
     axios.get('http://swapi.co/api/starships')
-    .then(res => {
-      console.log(res.data);
-      this.setState({products: res.data.results});
-    });
+      .then(res => {
+        console.log(res.data);
+        this.setState({products: res.data.results});
+      });
   }
-  render(){
+
+  render() {
     return (
-      <div className="container">
-        <div>
-          <Starships ships={this.state.products} />
-        </div>
+      <div className='container'>
+      <div>
+      <Starships ships={this.state.products} />
+      </div>
       </div>
     );
   }
 
 }
 
-React.render(<App />, document.getElementById("main"));
+React.render(<App />, document.getElementById('main'));
