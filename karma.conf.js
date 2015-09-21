@@ -25,7 +25,7 @@ module.exports = function(config) {
       devtool: 'inline-source-map',
       resolve: webpackConfig.resolve,
       plugins: webpackConfig.plugins
-      .filter(p => !p.__KARMA_IGNORE__),
+      .filter(function(p) {return !p.__KARMA_IGNORE__}),
       module: {
         loaders: webpackConfig.module.loaders,
       },
