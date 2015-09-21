@@ -5,7 +5,7 @@ class Starships extends React.Component {
 
   render(){
     let starships = this.props.ships.map(ship => {
-        return <Starship ship={ship}/>;
+        return <Starship key={ship.url} ship={ship} addToCart={this.props.addToCart}/>;
       });
 
     return (

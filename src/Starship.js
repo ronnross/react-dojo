@@ -1,4 +1,5 @@
 import React from 'react';
+import ShipDetails from './ShipDetails';
 
 class Starship extends React.Component {
   constructor(){
@@ -9,11 +10,11 @@ class Starship extends React.Component {
   }
 
   render(){
-    let ship = this.props.ship;
+    let {ship} = this.props;
     return (
       <li>
         <p><a href="#" onClick={this.showDetails.bind(this)}>{ship.name}</a></p>
-        {this.state.showDetails && <ShipDetails ship={ship} />}
+        {this.state.showDetails && <ShipDetails ship={ship} addToCart={this.props.addToCart} />}
        </li>
     );
   }
@@ -22,18 +23,7 @@ class Starship extends React.Component {
     this.setState({showDetails: !this.state.showDetails});
     console.log("showDetails: " + this.state.showDetails);
   }
+
 }
 
-class ShipDetails extends React.Component {
-
-  render(){
-    let ship = this.props.ship;
-    return (
-      <div>
-      <p>{ship.name}</p>
-      <p>{ship.crew}</p>
-      </div>
-    )
-  }
-}
 export default Starship;
